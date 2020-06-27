@@ -9,6 +9,7 @@ const templatePath = path.join(__dirname , '../templates/');
 const viewsPath = path.join(templatePath , '/views/');
 const paritalPath = path.join(templatePath , '/partials/');
 
+//app config
 const app = express();
 const port = process.env.PORT || 3000;
 
