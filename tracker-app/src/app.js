@@ -2,6 +2,7 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const forecast = require('./utils/track.js');
 
 //path
 const publicDirPath = path.join(__dirname , '../public');
@@ -11,6 +12,7 @@ const partialsDirPath = path.join(__dirname , '../templates/partials');
 //Express Configuration
 const app = express();
 app.use(express.static(publicDirPath));
+const port = process.env.PORT || 3000;
 
 //Handlebars
 app.set('view engine' , 'hbs');
@@ -23,6 +25,13 @@ app.get('' , (req , res) => {
 		name: 'Home',
 		version: '0.0'
 	});
+});
+
+app.get('/test' , (req , res) => {
+	forecast((err , data) => {
+		if(err) return res.send(err);
+		res.send(data);
+	} , req.query.address);
 });
 
 app.get('/help' , (req , res) => {
@@ -56,6 +65,6 @@ app.get('*' , (req , res) => {
 });
 
 //Port listen
-app.listen(3000 , () => {
+app.listen(port , () => {
 	console.log('Server is up in port 3000');
 });

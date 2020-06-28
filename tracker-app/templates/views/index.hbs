@@ -9,7 +9,14 @@
     <div class="content">
       {{>header}}
       <p>Hello World</p>
+      <form class="search">
+        <input type="text" name="txtSearch" placeholder="Location">
+        <button>Search</button>
+      </form>
+      <p id="txtData"></p>
+      <p id="txtError" style="color:red"></p>
     </div>
     {{>footer}}
+    <script type="text/javascript" src="/js/index.js"></script>
   </body>
 </html>
