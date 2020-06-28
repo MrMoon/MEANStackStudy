@@ -1,8 +1,7 @@
 const request = require('request');
 
-let url = 'https://api.covid19api.com/';
-const forecast = (callback , address) => {
-  url += (!address) ? 'summary' : '/total/country/' + address;
+const forecast = (callback , country) => {
+  const url = 'https://api.covid19api.com/total/dayone/country/' + country;
   request({ url , json: true } , (err , { body }) => {
       if(err) callback('Unable to connect to the service');
       else if(body.message) callback(body.message);

@@ -8,12 +8,16 @@
   <body>
     <div class="content">
       {{>header}}
-      <p>Hello World</p>
+      <h1 id="txtName" style="color:black">Total in the World</h1>
+      <div class="stat">
+        <h2 id="txtTotalConfirmed"></h2>
+        <h3 id="txtTotalRecovered"></h3>
+        <h4 id="txtTotalDeaths"></h4>
+      </div>
       <form class="search">
-        <input type="text" name="txtSearch" placeholder="Location">
+        <input id="txtSearch" type="text" placeholder="Location">
         <button>Search</button>
       </form>
-      <p id="txtData"></p>
       <p id="txtError" style="color:red"></p>
     </div>
     {{>footer}}

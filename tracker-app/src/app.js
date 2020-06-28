@@ -28,10 +28,12 @@ app.get('' , (req , res) => {
 });
 
 app.get('/test' , (req , res) => {
+	const query = req.query.country;
+	if(!query) return res.send('Error');
 	forecast((err , data) => {
 		if(err) return res.send(err);
 		res.send(data);
-	} , req.query.address);
+	} , req.query.country);
 });
 
 app.get('/help' , (req , res) => {

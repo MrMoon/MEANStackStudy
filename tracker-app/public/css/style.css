@@ -1,7 +1,7 @@
 body {
   color: dodgerblue;
   font-family: arial;
-  max-width: 650px;
+  max-width: 950px;
   margin: 0 auto;
   padding: 0 16px;
 
@@ -14,6 +14,14 @@ body {
   flex-grow: 1;
 }
 
+#txtTotalDeaths {
+  color: red;
+}
+
+#txtTotalRecovered {
+  color: green;
+}
+
 footer {
   color: #888888;
   border-top: 1px solid #eeeeee;
@@ -24,11 +32,6 @@ footer {
 header {
   margin-top: 16px;
   margin-bottom: 48px;
-}
-
-h1 {
-  font-size: 64px;
-  margin-bottom: 16px;
 }
 
 header a {
